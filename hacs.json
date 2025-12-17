@@ -1,8 +1,0 @@
-{
-  "name": "SolarZ",
-  "content_in_root": false,
-  "domain": "solarz",
-  "country": "BR",
-  "iot_class": "cloud_polling",
-  "homeassistant": "2023.12.0"
-}

@@ -7,6 +7,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from homeassistant.helpers.device_registry import DeviceInfo
 
 from .const import DOMAIN
 
@@ -27,10 +28,16 @@ class SolarZBaseSensor(CoordinatorEntity, SensorEntity):
 
     def __init__(self, coordinator) -> None:
         super().__init__(coordinator)
-
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, coordinator.config_entry.entry_id)},
+            name=coordinator.config_entry.title,
+            manufacturer="SolarZ",
+            model="Planta fotovoltaica",
+        )
 
 class SolarZGenerationTodaySensor(SolarZBaseSensor):
     _attr_name = "Geração hoje"
+    _attr_icon = "mdi:solar-power"
     _attr_unique_id = "solarz_generation_today"
     _attr_unit_of_measurement = "kWh"
     _attr_device_class = SensorDeviceClass.ENERGY
@@ -54,6 +61,7 @@ class SolarZGenerationTodaySensor(SolarZBaseSensor):
 
 class SolarZForecastTodaySensor(SolarZBaseSensor):
     _attr_name = "Previsão hoje"
+    _attr_icon = "mdi:solar-power"
     _attr_unique_id = "solarz_forecast_today"
     _attr_unit_of_measurement = "kWh"
 
