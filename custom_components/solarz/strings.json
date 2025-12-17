@@ -1,0 +1,19 @@
+{
+  "title": "SolarZ",
+  "config": {
+    "step": {
+      "user": {
+        "title": "SolarZ",
+        "description": "Informe suas credenciais e o ID da usina.",
+        "data": {
+          "username": "E-mail",
+          "password": "Senha",
+          "plant_id": "ID da usina"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Não foi possível conectar na SolarZ."
+    }
+  }
+}

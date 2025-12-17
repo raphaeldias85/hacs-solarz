@@ -1,0 +1,10 @@
+{
+  "domain": "solarz",
+  "name": "SolarZ",
+  "version": "0.0.1",
+  "documentation": "https://github.com/seuuser/solarz-ha",
+  "requirements": [],
+  "codeowners": ["@raphaeldias85"],
+  "config_flow": true,
+  "iot_class": "cloud_polling"
+}
